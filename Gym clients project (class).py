@@ -50,29 +50,3 @@ Dobro.Age_BW(90, '2/6/2023')
 
 Dobro.PRs(90, 70, 90)
 # print(Dobro.PRs_list)
-
-
-while True:
-    print('1. Add Client')
-    print("2. Client's info")
-    print('3. Update Client')
-    print('4. Delete Client')
-    print('5. List of Clients (names)')
-    print('6. Exit')
-    choice = int(input('Select action: '))
-    if choice == 1:
-        new_client_name = input("Give client's name: ")
-        new_client_age = input("Give client's birthday: ")
-        new_client = Client(new_client_name, new_client_age)
-    elif choice == 2:
-        client_name = input("Give client's name to get his info: ")
-        while client_name not in Client.list_of_clients:
-            print('There is no client with this name! Try again please')
-            client_name = input("Give client's name to get his info: ")
-        else:
-            print(Client.client_name.)
-    elif choice == 5:
-        print(Client.list_of_clients)
-
-    else:
-        break
