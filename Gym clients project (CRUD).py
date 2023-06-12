@@ -1,6 +1,5 @@
 clients = [{'name': 'Dimitris', 'surname': 'Liolios', 'father_name': 'Theodosis', 'age': 41, 'PR_total': 410, 'id': 1000}]
 
-
 def menu():
     print()
     print('MENU')
@@ -20,6 +19,7 @@ def menu():
 
 while True:
     choice = menu()
+    
     # CHOICE 1 - PRINT
     if choice == 1:
         print("Select client's info to choose from. Select between 1 - 3 or 4 to return to previous menu: ")
@@ -50,6 +50,7 @@ while True:
                 break
             elif choice1 == 4: break
             else: choice1 = int(input("You have to choose between 1 - 4. Select by: "))
+                
     # CHOICE 2 - ADD
     elif choice == 2:
         ids_list = []
@@ -68,6 +69,7 @@ while True:
         ids_list.append(new_client['id'])
         print('You just added the following client:')
         print(new_client)
+        
     # CHOICE 3 - UPDATE
     elif choice == 3:
         print('Updating client...')
@@ -107,6 +109,7 @@ while True:
                         continue
                 print('Wrong surname and/or id!')
                 break
+                
     # CHOICE 4 - DELETE
     elif choice == 4:
         print('Deleting client...')
