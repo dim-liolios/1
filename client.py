@@ -3,6 +3,7 @@ from client_program import Client_program
 
 prog = Client_program('client_program.csv')
 
+
 repeat = True
 while repeat:
 
@@ -12,6 +13,7 @@ while repeat:
     if choice == 1:
         prog.choice1_print_client()
 
+    
     # CHOICE 2 - ADD
     elif choice == 2:
         check_2 = True
@@ -30,20 +32,24 @@ while repeat:
                 print('This client is already in your file!')
                 check_2 = False
 
+    
     # CHOICE 3 - UPDATE
     elif choice == 3:
         prog.choice3_update_client()
 
+    
     # CHOICE 4 - DELETE
     elif choice == 4:
         prog.choice4_delete_client()
 
+    
     # CHOICE 5 - SAVE & EXIT
     elif choice == 5:
         prog.save_to_csv()
         # client_lifts.export_to_csv()
         repeat = False
 
+    
     else:
         print('You have to give a number from 1 - 5!')
 
