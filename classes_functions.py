@@ -16,6 +16,7 @@ class Person:
     def __add__(self, other):
         return self.weight + other.weight
 
+
 class Athlete(Person):
     def __init__(self, name, birthday, weight, height, fat_perc, sport, oly_medals=0):
         super().__init__(name, birthday, weight, height)
@@ -32,6 +33,7 @@ class Athlete(Person):
         else:
             return super().__str__() + f". He is a {self.sport} athlete with a {self.fat_perc} body fat"
 
+
 class Boxer(Athlete):
     def __init__(self, name, birthday, weight, height, fat_perc, sport, oly_medals, KOs):
         super().__init__(name, birthday, weight, height, fat_perc, sport, oly_medals)
@@ -43,6 +45,7 @@ class Boxer(Athlete):
     def add_KOs(self, KOs):
         return self.KOs + KOs
 
+
 class Sprinter(Athlete):
     def __init__(self, name, birthday, weight, height, fat_perc, sport, oly_medals, under_10sec_races):
         super().__init__(name, birthday, weight, height, fat_perc, sport, oly_medals)
@@ -50,6 +53,7 @@ class Sprinter(Athlete):
 
     def __str__(self):
         return super().__str__() + f" and a total of {self.under_10sec_races} times run 100m under 10 seconds."
+
 
 class Fan(Person):
     def __init__(self, name, birthday, weight, height, team, fav_players):
@@ -70,24 +74,22 @@ class Fan(Person):
         return f"{self.name} is {self.age} years old and supports {self.team}."
 
 
-psi = Athlete('Liolios', '1/12/1982', 67.5, 1.70, '9%', 'BJJ', 0)
-titos = Person('Matsakos', '1/5/1982', 77, 1.78)
-mitsos = Boxer('Avramis', '1/5/1988', 86, 1.92, '15%', 'Boxing', 0, 5)
-vlad = Boxer('Nazarenko', '1/5/1985', 86, 1.72, '20%', 'Boxing', 2, 10)
-giwrgos = Sprinter('Papadopoulos', '1/3/1999', 72, 1.80, '5%', '100m', 0, 7)
-takis = Fan('Tsoukalas', '1/2/1960', 80, 1.77, 'Olympiacos', ['Giovanni', 'Rivaldo', 'Djole'])
+ath1 = Athlete('Lepri', '19/9/1985', 74, 1.75, '9%', 'BJJ', 0)
+pers = Person('Liolios', '1/12/1982', 66.5, 1.70)
+box1 = Boxer('Loma', '17/2/1988', 86, 1.92, '6%', 'Boxing', oly_medals=2, KOs=11)
+box2 = Boxer('Mayweather', '24/2/1977', 86, 1.72, '20%', 'Boxing', oly_medals=1, KOs=27)
+spr1 = Sprinter('Bolt', '21/8/1986', 72, 1.80, '5%', '100m', oly_medals=3, under_10sec_races=8)
+fan1 = Fan('Tsoukalas', '22/3/1958', 80, 1.77, 'Olympiacos', ['Giovanni', 'Rivaldo', 'Djole'])
 
 
-print(takis[0])
-takis[0] = mitsos.name
-print(takis[0])
-print()
-print(psi)
-print(mitsos)
-print(giwrgos)
-print(takis)
-print()
-print(psi + titos)
-print(mitsos + vlad)
-print(mitsos.add_KOs(vlad.KOs))
+# requesting value from fan1 list of favorite players:
+print(fan1[0])
+# setting new value in place 0:
+fan1[0] = box1.name
+print(fan1[0])
 
+# adding boxers' KOs:
+print(box1.add_KOs(box2.KOs))
+
+# adding 2 persons' weight:
+print(ath1 + pers)
