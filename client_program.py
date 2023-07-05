@@ -6,6 +6,7 @@ class Client_program:
     def __init__(self, df):
         self.df = pd.read_csv(df).set_index('id')
 
+    
     def get_main_menu_choice(self):
         print('MAIN MENU')
         print('=' * 20)
@@ -19,6 +20,7 @@ class Client_program:
         if choice_menu.isdigit():
             return int(choice_menu)
 
+    
     def choice1_print_client(self):
         print()
         print("PRINTING client info")
@@ -58,6 +60,7 @@ class Client_program:
                 print("You have to choose between 1 - 3!")
                 check_1 = False
 
+    
     def choice2_add_client(self):
         print()
         print('ADDING client')
@@ -76,6 +79,7 @@ class Client_program:
             new_client['id'] = 1
         return new_client
 
+    
     def choice2_add_client_check_duplicate(self, new_client):
         clients_identifier_list = []
         new_client_tuple = (new_client['name'], new_client['surname'],
@@ -88,6 +92,7 @@ class Client_program:
         else:
             return True
 
+    
     def choice3_update_client(self):
         print()
         print('UPDATING client')
@@ -130,6 +135,7 @@ class Client_program:
                     check_3 = False
                     print(self.df.loc[self.df.index == choice3_id])
 
+    
     def choice4_delete_client(self):
         print()
         print('DELETING client')
@@ -150,6 +156,7 @@ class Client_program:
                 print('No client has this id!')
                 check_4 = False
 
+    
     def save_to_csv(self):
         self.df.to_csv('client_program.csv')
         print(self.df)
