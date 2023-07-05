@@ -74,17 +74,17 @@ class Fan(Person):
         return f"{self.name} is {self.age} years old and supports {self.team}."
 
 
-ath1 = Athlete('Lepri', '19/9/1985', 74, 1.75, '9%', 'BJJ', 0)
+ath1 = Athlete('Lepri', '19/9/1985', 74, 1.75, '9%', 'BJJ', oly_medals=0)
 pers = Person('Liolios', '1/12/1982', 66.5, 1.70)
 box1 = Boxer('Loma', '17/2/1988', 86, 1.92, '6%', 'Boxing', oly_medals=2, KOs=11)
 box2 = Boxer('Mayweather', '24/2/1977', 86, 1.72, '20%', 'Boxing', oly_medals=1, KOs=27)
-spr1 = Sprinter('Bolt', '21/8/1986', 72, 1.80, '5%', '100m', oly_medals=3, under_10sec_races=8)
+spr1 = Sprinter('Bolt', '21/8/1986', 72, 1.80, '5%', '100m', oly_medals=8, under_10sec_races=3)
 fan1 = Fan('Tsoukalas', '22/3/1958', 80, 1.77, 'Olympiacos', ['Giovanni', 'Rivaldo', 'Djole'])
 
 
 # requesting value from fan1 list of favorite players:
 print(fan1[0])
-# setting new value in place 0:
+# setting new value in position 0:
 fan1[0] = box1.name
 print(fan1[0])
 
