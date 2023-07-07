@@ -3,8 +3,6 @@ from PIL import Image, ImageFilter, ImageDraw, ImageFont, ImageEnhance
 import cv2 as cv
 import pytesseract
 
-
-
 image = Image.open("Test.png")
 image = image.convert('RGB')
 
